@@ -7,10 +7,6 @@ steps:
     commands:
       - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
       - mvn test -B
-  - name: build=image
-    image: maven:3-jdk-11
-    commands:
-      - mvn spring-boot:build-image
   - name: docker-push
     image: plugins/docker
     settings:
